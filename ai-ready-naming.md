@@ -34,7 +34,9 @@ Names that describe visual emphasis (`strong`, `standard`, `subtle`) don't have 
 The same goes for `h1`–`h4` text styles used for visual size.
 
 **Compressed names can't be decoded.**
-A real set of colour tokens (`emphasis/content/argument-e…`, `emphasis/bg/bg-fill-e…`) couldn't be explained by the stakeholder who owned them, by a room of designers, or by several AI tools.
+A real set of colour tokens, with names like these, couldn't be explained by the stakeholder who owned them, by a room of designers, or by several AI tools:
+`surface/txt/surf-txt-on-act-on-act-p…`, `surface/fill/fill-surf-act-on-…`, `action/txt/act-txt-on-surf-…`.
+*(These examples are made up, but they have the same problems as the real ones.)*
 Repeated segments, abbreviations and a distinguishing part that's cut off in the tool's panel make a name that neither people nor agents can use.
 
 **One word with two meanings gets merged.**
