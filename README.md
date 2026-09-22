@@ -33,15 +33,24 @@ Both end up in the same place.
 
 ### Just start
 
-1. Download the zip and unzip it. Rename the folder if you like.
-2. In Obsidian, choose **Open folder as vault** and pick the folder.
-3. Start working. That's all you need.
+1. Download the zip, using either of these:
+   - [the direct download link](https://github.com/future-friendly-design/smashing-workshop-naming-starter-kit/archive/refs/heads/main.zip), or
+   - on the [starter kit's GitHub page](https://github.com/future-friendly-design/smashing-workshop-naming-starter-kit), the green **Code** button → **Download ZIP**.
+2. Unzip it. The folder is called `smashing-workshop-naming-starter-kit-main`.
+   Rename it to something you'll recognise, such as `acme-naming-inventory`, and move it wherever you keep your work.
+3. In Obsidian, choose **Open folder as vault** and pick the folder.
+4. Start working. That's all you need.
+
+On a Mac, the folder looks like it only holds notes and folders.
+It also holds two hidden folders: `.obsidian/`, which holds the vault settings, and `.claude/`, which holds the Claude Code skills.
+To see them in Finder, press **Cmd + Shift + .** (full stop). Press it again to hide them.
+Leave them where they are, even if you never use Claude Code.
 
 When you want a backup in the cloud:
 
-4. In **GitHub Desktop**, choose **File → Add Local Repository** and pick the folder.
-5. It will say the folder isn't a repository yet and offer to **create a repository**. Click that. Leave "Initialize with README" unticked.
-6. Click **Publish repository**. Keep "Keep this code private" ticked.
+1. In **GitHub Desktop**, choose **File → Add Local Repository** and pick the folder.
+2. It will say the folder isn't a repository yet and offer to **create a repository**. Click that. Leave "Initialize with README" unticked.
+3. Click **Publish repository**. Keep "Keep this code private" ticked.
 
 ### Start connected
 
@@ -50,6 +59,13 @@ If you already use GitHub:
 1. On the [starter kit's GitHub page](https://github.com/future-friendly-design/smashing-workshop-naming-starter-kit), click **Use this template** to make your own copy.
 2. Click **Code → Open with GitHub Desktop** and choose where to keep it.
 3. In Obsidian, choose **Open folder as vault** and pick that folder.
+
+### Check the templates setting
+
+Whichever way you started, check this once in Obsidian:
+**Settings → Templates → Template folder location** should say `templates`.
+If it's empty, type `templates` and close Settings.
+That's what makes **Insert template** offer the kit's four templates.
 
 The full walkthrough, including what to do when something looks wrong, is in [backing-up-with-github.md](backing-up-with-github.md).
 
@@ -64,12 +80,11 @@ GitHub Desktop has two buttons you'll use:
 
 ## By hand
 
-1. In Obsidian, check **Settings → Templates** shows the template folder as `templates`.
-2. In Figma, run the **Specs** plugin on a component and look at the spec it produces.
-3. Create a note in `components/` named after the component, and insert the `component` template.
-4. Copy the layer and prop names across, exactly as Figma has them.
-5. Leave a `?` wherever you'd be guessing.
-6. In **GitHub Desktop**, commit with a message like `Inventory toggle-button`, then push.
+1. In Figma, run the **Specs** plugin on a component and look at the spec it produces.
+2. Create a note in `components/` named after the component, and insert the `component` template.
+3. Copy the layer and prop names across, exactly as Figma has them.
+4. Leave a `?` wherever you'd be guessing.
+5. If you've set up GitHub Desktop, commit with a message like `Inventory toggle-button`, then push.
 
 For variables, export them from Figma or with a variables-export plugin, save the file in `exports/`, and fill in a `token-collection` note.
 
