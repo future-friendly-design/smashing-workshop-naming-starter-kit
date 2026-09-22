@@ -1,9 +1,13 @@
 ---
 name: inventory-component
-description: "Turn a Specs plugin export (YAML or JSON) of a Figma component into a component inventory note in components/. Use when someone pastes a Specs or Anova export, drops one into exports/, or asks to inventory, document, or record the naming of a component."
+description: "Turn a Figma component export into a component inventory note in components/. Written around the Specs plugin (YAML or JSON), and works with other plugins' exports too. Use when someone pastes a Specs, Anova or other plugin export, drops one into exports/, or asks to inventory, document, or record the naming of a component."
 ---
 
 # Inventory a component from a Specs export
+
+The field guide below is for the Specs plugin.
+If the export comes from another plugin, read what it actually contains, say which fields you used for layers, props and values,
+and list in "What the source can't tell you" everything it leaves out. Different plugins leave out different things.
 
 The output is a note in `components/<figma-name>.md`, built from `templates/component.md`.
 It records names; it does not judge or fix them.
@@ -29,6 +33,7 @@ It records names; it does not judge or fix them.
 | `default.elements.<layer>.content.$binding` | Props "Affects", for text props |
 | `default.elements.<layer>.propConfigurations` | Nested component settings table |
 | `variants[].elements.<layer>.styles.visible: false` | Props "Affects", when a variant hides a layer |
+| `invalidVariantCombinations` | Open questions: which state combinations the designer left out on purpose. An empty list means none were recorded, not that every combination is valid in code |
 
 Skip the style values in `variants`.
 They are most of the file and none of the naming.
@@ -54,7 +59,8 @@ Write the likely layer with `? (inferred)`.
 
 1. Export columns: copy names exactly, including case and odd spellings.
 2. Judgement columns (Kind, Framework part, Slot or fixed, Code prop, Design-only?): leave `?`.
-   Fill them in only if the person has told you the framework and the answer follows from it, and say where it came from.
+   Fill them in only if the person has told you the framework and the answer follows from it.
+   Every framework part name or code prop you fill in needs a link to the framework's documentation. No link, leave `?`.
 3. Identity section: leave `?` unless the person has told you.
 4. Naming patterns observed: describe the case and affixes per domain.
    Where one domain mixes patterns (some props camelCase, some kebab-case), list each pattern with its members.
@@ -66,6 +72,16 @@ Write the likely layer with `? (inferred)`.
 6. Open questions: anything a person could answer in a minute that the export can't.
 
 Set `track: claude` and `inventoried-by` to the person's name plus "with Claude", if you know it.
+
+## Sibling components
+
+Figma component sets get split into sibling components to keep file performance up, usually with a shared prefix:
+`button-neutral`, `button-brand`, `button-destructive`.
+Several Figma components can therefore be **one** code component, and a value word in a component name (`neutral`) can be deliberate.
+
+- If the component's name shares a prefix with other components, note the likely family in Identity: `Framework equivalent: ? (possibly one Button with button-brand, button-info…)`.
+- Don't record the value word in the name as an inconsistency with a sibling that has the same value as a prop.
+- Equally, don't assume every Figma component has a code counterpart. In Figma, anything published is a "component", including patterns and whole pages.
 
 ## Report back
 

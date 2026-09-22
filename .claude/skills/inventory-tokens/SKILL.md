@@ -35,8 +35,10 @@ Don't estimate counts by reading.
    Tabulate the words that appear at each position.
 3. **Write the grammar.** Name each position by what it holds (category, property, role, state, scale).
    Mark a position optional if some names skip it.
-4. **Tiers.** Tokens with raw values versus tokens that alias others.
-   Follow the aliases to see which collections point at which.
+4. **Tiers.** Decide each token's tier by its value, never by its name.
+   A token holding a raw value (`#5B81FE`, `16px`, `Lato`) is a primitive, however it's named.
+   A token whose value references another token is not a primitive, even if its name reads like one (`font-family-lato`).
+   Follow the references to see which collections point at which.
 5. **Vocabularies.** State words, scale words, emphasis words.
    Note mixed systems (`100`–`900` alongside `sm` / `md` / `lg`).
 6. **Exceptions.** Every name that doesn't fit the grammar, with how it breaks.

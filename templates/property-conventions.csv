@@ -1,0 +1,7 @@
+property,property_group,figma_type,values,default,targets_layer,components,description,why_this_name,source,decided_by
+svg-icon-start,Instance swap,Instance swap,,,icon-start,,Chooses which icon shows at the start,The svg- prefix separates the swap from the boolean icon-start that shows or hides the same layer,EXAMPLE - delete this row,
+icon-start,Optional element,Boolean,true; false,,icon-start,,Shows or hides the start icon without changing the layout,Named exactly like its layer because it only toggles that layer,EXAMPLE - delete this row,
+hasLabel,Optional element,Variant,true; false,,label,,Adds a text label and changes the layout to fit it,The has- prefix marks an element whose presence changes the layout,EXAMPLE - delete this row,
+label-copy,Text content,Text,,,label,,The visible label text,The -copy suffix marks editable text; the layer name is the prop name without -copy,EXAMPLE - delete this row,
+interaction-state,Conditional variation,Variant,rest; hover; pressed; loading; inactive; disabled,rest,,,What the user is doing with the component right now,"rest, not default, because rest is not always the default state",EXAMPLE - delete this row,
+isFocused,Conditional variation,Boolean,true; false,true,focus-indicator,,Shows or hides the focus indicator,"A separate boolean because focus can happen at the same time as hover or pressed; true in Figma so designers see it while building",EXAMPLE - delete this row,

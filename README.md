@@ -10,8 +10,9 @@ The notes come out the same either way, because both follow the same templates.
 
 | Folder | What goes there |
 |---|---|
-| `templates/` | The four note templates |
+| `templates/` | The note templates, plus `property-conventions.csv` for anyone who prefers a spreadsheet |
 | `exports/` | Raw exports from Figma plugins, kept exactly as exported |
+| `conventions/` | Your system's own naming conventions, if it has documented ones |
 | `components/` | One note per component: layers, props, values |
 | `tokens/` | One note per variable collection: the naming pattern and what breaks it |
 | `findings/` | One note per place where names disagree |
@@ -20,8 +21,9 @@ The notes come out the same either way, because both follow the same templates.
 ## The order of work
 
 1. **Inventory**: record what exists. Don't fix anything yet.
-2. **Findings**: compare, and note where names disagree.
-3. **Decisions**: for each real finding, choose a name and record why.
+2. **Conventions**: if your system has written naming rules anywhere, record them, with the reason for each. If it has none, note that.
+3. **Findings**: compare, and note where names disagree. Check against the conventions first: a pattern that looks inconsistent may be a deliberate rule.
+4. **Decisions**: for each real finding, choose a name and record why.
 
 Keeping these apart matters.
 If you fix names while inventorying, you lose the record of what was there, and you'll be making decisions one component at a time without seeing the pattern.
@@ -78,6 +80,21 @@ GitHub Desktop has two buttons you'll use:
 | **Commit to main** | Saves a version of your notes, with a short note about what changed |
 | **Push origin** | Syncs your saved versions to the cloud |
 
+## Getting data out of Figma
+
+Any export that lists your components' layers and properties, or your variables' names, will do.
+Save it in `exports/` exactly as it came out, so every note can point at its source.
+
+| What you're inventorying | What to export | Goes into |
+|---|---|---|
+| Components: layers, props, values | A component export from the **Specs** plugin (YAML or JSON), or another plugin that exports component properties | a `component` note |
+| Variables and tokens | Figma's own variables export (design token JSON), or a CSV from a variables-export plugin | a `token-collection` note |
+| Anything else | A screenshot, or a copy and paste of the names | whichever note fits |
+
+Every export leaves something out.
+The free tier of Specs, for example, writes colours as raw hex even where variables are applied.
+Write down what your export can't show you, so nobody reads a gap as a fact.
+
 ## By hand
 
 1. In Figma, run the **Specs** plugin on a component and look at the spec it produces.
@@ -108,6 +125,8 @@ Those are yours: which layers really exist in code, what the code calls each pro
 - **A difference isn't always an inconsistency.** A toggle button has a selected state and a button doesn't.
 - **An export never shows everything.** The free Specs plugin writes colours as hex even where variables are applied. Don't read that as "not tokenised".
 - **An empty field beats an invented one.** If nobody can say who decided something, write "No decision found".
+- **Inventory never renames anything.** Not in Figma, not in code, not even removing emojis. A name is a contract other people's work depends on, so changing it is a breaking change that needs a decision and a release.
+- **A token's tier comes from its value, not its name.** A token holding a raw value is a primitive; a token pointing at another token isn't, whatever it's called.
 
 ## License
 
