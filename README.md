@@ -93,3 +93,21 @@ Those are yours: which layers really exist in code, what the code calls each pro
 - **A difference isn't always an inconsistency.** A toggle button has a selected state and a button doesn't.
 - **An export never shows everything.** The free Specs plugin writes colours as hex even where variables are applied. Don't read that as "not tokenised".
 - **An empty field beats an invented one.** If nobody can say who decided something, write "No decision found".
+
+## License
+
+© 2026 Future Friendly Designs Inc.
+This work is licensed under [Creative Commons Attribution 4.0 International](LICENSE) (CC BY 4.0).
+To view a copy of this license, visit https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt the material, including commercially, as long as you give appropriate credit.
+The credit applies when you share the kit or your version of it publicly.
+The notes you write in it are yours.
+
+### How to credit
+
+If you share the kit or a version of it, for example in your own workshop, a public repo, or a blog post, include a line like this:
+
+> Adapted from the [Naming inventory starter kit](https://github.com/future-friendly-design/smashing-workshop-naming-starter-kit) by Sam Gordashko, [Future Friendly Design](https://github.com/future-friendly-design), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+If you haven't changed anything, write "From" instead of "Adapted from".
