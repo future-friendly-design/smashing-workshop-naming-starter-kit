@@ -18,6 +18,8 @@ The notes come out the same either way, because both follow the same templates.
 | `findings/` | One note per place where names disagree |
 | `decisions/` | One record per naming decision you make |
 
+Here because your team wants naming that's "AI-ready"? Start with [ai-ready-naming.md](ai-ready-naming.md).
+
 ## The order of work
 
 1. **Inventory**: record what exists. Don't fix anything yet.
@@ -90,6 +92,18 @@ Save it in `exports/` exactly as it came out, so every note can point at its sou
 | Components: layers, props, values | A component export from the **Specs** plugin (YAML or JSON), or another plugin that exports component properties | a `component` note |
 | Variables and tokens | Figma's own variables export (design token JSON), or a CSV from a variables-export plugin | a `token-collection` note |
 | Anything else | A screenshot, or a copy and paste of the names | whichever note fits |
+
+### Plugins shown in the workshop
+
+| Plugin | What it does | Use it for |
+|---|---|---|
+| [Specs 2](https://www.figma.com/community/plugin/1549454283615386215/specs-2) | Exports a component's anatomy, props and values as YAML or JSON | a `component` note, by hand or with Claude |
+| [Propstar](https://www.figma.com/community/plugin/1116018586739867857/propstar) | Lays out every combination of a component's variants and properties in a labelled table | seeing every prop and value at once, and spotting combinations that shouldn't exist |
+| [Select Layers](https://www.figma.com/community/plugin/799648692768237063/select-layers) | Selects layers by name, type or similarity | finding every layer with a given name, and its misspellings, across a file |
+| [Variables Documentation](https://www.figma.com/community/plugin/1493511839808963998/variables-documentation) | Generates tables of your variables and their values across modes | reading variable names and modes by hand |
+| [Typography Documentation](https://www.figma.com/community/plugin/1582434622981020238/typography-documentation) | Lays out your local text styles with their properties | text style names |
+| [Luckino](https://www.figma.com/community/plugin/1495722115809572711/luckino-variables-import-export-json-css) | Imports and exports variables as JSON and CSS | a variables export for a `token-collection` note |
+| [Token Press](https://www.figma.com/community/plugin/1560757977662930693/token-press-dtcg-style-dictionary-exporter) | Exports variables as DTCG tokens and for Style Dictionary | a DTCG token file for a `token-collection` note |
 
 Every export leaves something out.
 The free tier of Specs, for example, writes colours as raw hex even where variables are applied.
