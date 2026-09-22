@@ -99,7 +99,7 @@ So AI-ready is mostly about **written context, in a place an agent can read**:
 | What each export can't show | So it doesn't read a gap as a fact | "What the source can't tell you" in every inventory note |
 
 It's also why this kit is plain markdown in a Git repo.
-Agents read repositories easily; they can't read a FigJam board, a slide deck, or the conversation where you decided.
+Agents read repositories easily. A FigJam board or a slide deck is much harder for them to reach, and the conversation where you decided is out of reach entirely.
 
 ## How to test whether your names are AI-ready
 
